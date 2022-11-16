@@ -7,7 +7,7 @@ const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/game
 const getScores = async () => {
   const reponse = await fetch(`${url}`);
   const data = await reponse.json();
-  return data
+  return data;
 };
 
 const refresh = () => {
@@ -17,14 +17,14 @@ const refresh = () => {
     Object.entries(entry.result).forEach(([, value]) => {
       gamers.push(JSON.stringify(value));
       const listItems = document.createElement('div');
-      listItems.className = "listItems"
+      listItems.className = 'listItems';
       listItems.innerHTML = `
               <p>${value.user}:</P>
               <p>${value.score}</P>
             `;
       scoresHolder.appendChild(listItems);
-    })
-  })
+    });
+  });
 };
 
 const add = async (newScore) => {
@@ -42,23 +42,21 @@ const add = async (newScore) => {
 
 const create = () => {
   const newScore = {
-    user: document.getElementById("username").value,
-    score: document.getElementById("userscore").value,
+    user: document.getElementById('username').value,
+    score: document.getElementById('userscore').value,
   };
-  document.getElementById("username").value = '';
-  document.getElementById("userscore").value = '';
-  add(newScore)
+  document.getElementById('username').value = '';
+  document.getElementById('userscore').value = '';
+  add(newScore);
 };
 
-refresh()
+refresh();
 
-
-
-refreshBtn.addEventListener("click", () => {
-  refresh()
-})
+refreshBtn.addEventListener('click', () => {
+  refresh();
+});
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-  create()
-})
+  create();
+});
