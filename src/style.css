@@ -51,3 +51,9 @@ input {
 #submit {
   margin-left: 62%;
 }
+
+.listItems {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}

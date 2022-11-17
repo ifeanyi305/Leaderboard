@@ -1,12 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 <script defer src="main.js"></script></head>
+
 <body>
-    <h1>yeah</h1>
+  <section>
+    <div class="container">
+      <h1>Leaderboard</h1>
+      <div class="leaderboard-con">
+        <div class="scores">
+          <div class="recent-scores">
+            <h3>Recent Scores</h3>
+            <button id="refresh">Refresh</button>
+          </div>
+          <div class="scores-con">
+            
+          </div>
+        </div>
+        <div class="input">
+          <h3 class="add">Add your score</h3>
+          <form action="submit" method="post" class="input-con">
+            <input type="text" name="text" id="username" placeholder="Your name" required>
+            <input type="text" name="text" id="userscore" placeholder="Your score" required>
+            <button type="submit" id="submit">submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 </body>
+
 </html>
