@@ -10,17 +10,29 @@ const getScores = async () => {
   return data;
 };
 
-const refresh = () => {
-  scoresHolder.innerHTML = '';
+const reload = (bool) => {
+  let wrapper = document.querySelector('.animate');
+  if (wrapper === null) {
+    scoresHolder.innerHTML += `<div class="animate">          
+      </div>`;
+    wrapper = document.querySelector('.animate');
+  }
+  wrapper.style.display = bool ? 'block' : 'none';
+};
+
+const refresh = async () => {
   const gamers = [];
-  getScores().then((entry) => {
+  reload(true);
+  await getScores().then((entry) => {
+    scoresHolder.innerHTML = '';
+    reload(false);
     Object.entries(entry.result).forEach(([, value]) => {
       gamers.push(JSON.stringify(value));
       const listItems = document.createElement('div');
       listItems.className = 'listItems';
       listItems.innerHTML = `
-              <p>${value.user}:</P>
-              <p>${value.score}</P>
+              <p class="p">${value.user}</P>
+              <p class="p">${value.score}</P>
             `;
       scoresHolder.appendChild(listItems);
     });
@@ -28,6 +40,8 @@ const refresh = () => {
 };
 
 const add = async (newScore) => {
+  const wrapper = document.querySelector('.animate');
+  wrapper.style.display = 'block';
   const response = await fetch(`${url}`, {
     method: 'POST',
     headers: {
@@ -52,7 +66,8 @@ const create = () => {
 
 refresh();
 
-refreshBtn.addEventListener('click', () => {
+refreshBtn.addEventListener('click', (event) => {
+  event.preventDefault();
   refresh();
 });
 

@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@300&family=Lexend+Deca:wght@700&family=Poppins:wght@300;400&family=Raleway:ital,wght@0,100;0,200;1,100;1,200&family=Roboto&display=swap');
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: sans-serif, 'Poppins';
+}
+
+body {
+  background-image: url(images/games.jpg);
 }
 
 section {
@@ -27,6 +34,21 @@ h1 {
   grid-auto-columns: 1fr;
 }
 
+@media screen and (max-width: 700px) {
+  .leaderboard-con {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .input {
+    margin: auto;
+  }
+
+  .recent-scores {
+    margin-left: 15%;
+  }
+}
+
 .recent-scores {
   display: flex;
   align-items: center;
@@ -41,19 +63,84 @@ h1 {
 .scores-con {
   border: 2px solid black;
   padding: 5px;
+  width: 300px;
+  max-width: 100%;
+  border-radius: 5px;
+  background-color: #6070ff;
+}
+
+p {
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+}
+
+button {
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 6px;
+  border: none;
+  border: solid 2px #396df2;
+  background-color: white;
+  transition: 0.5s;
+}
+
+button:hover {
+  background-color: #6070ff;
+  color: white;
 }
 
 input {
   display: block;
+  background-color: rgba(39, 34, 34, 0.975);
   margin-bottom: 15px;
+  padding: 5px;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
 }
 
 #submit {
-  margin-left: 62%;
+  margin-left: 27%;
+}
+
+.input {
+  margin-top: 3.5%;
 }
 
 .listItems {
   display: flex;
   align-items: center;
-  gap: 5px;
+  justify-content: space-between;
+  background-color: rgb(66, 63, 63);
+  margin-bottom: 2px;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.animate {
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid #3498db;
+  border-radius: 50%;
+  display: none;
+  margin: auto;
+  width: 80px;
+  height: 80px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.table {
+  background-color: black;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 2px;
 }
