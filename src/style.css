@@ -47,6 +47,10 @@ h1 {
   .recent-scores {
     margin-left: 15%;
   }
+
+  .scores-con {
+    margin-bottom: 10%;
+  }
 }
 
 .recent-scores {
