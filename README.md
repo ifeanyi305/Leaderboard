@@ -8,7 +8,7 @@ LeaderBoard.
 
 Leaderboard setup
 
-# Project web demo link.
+# Project web demo link. https://ifeanyi305.github.io/Leaderboard/dist/
 
 # Built With
 
