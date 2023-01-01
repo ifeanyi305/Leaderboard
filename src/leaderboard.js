@@ -2,7 +2,7 @@ const form = document.querySelector('.input-con');
 const refreshBtn = document.getElementById('refresh');
 const scoresHolder = document.querySelector('.scores-con');
 
-const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/rpN8IMWS1qo5BhRdNfm5/scores';
+const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/PMAK-63b1b6e85659986cc2a170e5-XXXX/scores';
 
 const getScores = async () => {
   const reponse = await fetch(`${url}`);
@@ -54,7 +54,7 @@ const add = async (newScore) => {
   return data;
 };
 
-const create = () => {
+const createScore = () => {
   const newScore = {
     user: document.getElementById('username').value,
     score: document.getElementById('userscore').value,
@@ -73,5 +73,5 @@ refreshBtn.addEventListener('click', (event) => {
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-  create();
+  createScore();
 });
